@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --skyblue: rgb(222, 230, 235);
+    --gray-1: #bfbfbf;
+    --white: #ffffff;
+    --pri-1: rgb(30, 144, 255);
+    --pri-2: #1e90ff63;
+    --pri-3: #1e90ff0d;
+}
+
+body {
+    font-size: .9rem;
+    ;
+}
+
+.wrapper {
+    @apply px-5
+}
+
+/* wrapper on tablet screen */
+@media screen and (min-width: 640px) {
+    .wrapper {
+        @apply px-10
+    }
+}
