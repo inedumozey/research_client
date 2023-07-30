@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { FaTasks } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -162,7 +163,7 @@ function SideBar({ showSideBar, handleShowSideBar, setShowSideBar }) {
 
       {/* side bar */}
       <div
-        className={`z-[2002] fixed top-0 bottom-0 left-0 w-[40vw] bg-color-white shadow-2xl transition duration-300 ${showSideBar ? "-translate-x-[0%]" : "-translate-x-[105%]"
+        className={`z-[2002] fixed top-0 bottom-0 left-0 w-[60vw] bg-color-white shadow-2xl transition duration-300 ${showSideBar ? "-translate-x-[0%]" : "-translate-x-[105%]"
           } md:hidden`}
       >
         {/* menu items */}
@@ -205,11 +206,14 @@ function Hero({ data }) {
             <SwiperSlide key={i} className={`h-full w-full transition duration-[2s] group`}>
               <div className="h-full w-full absolute top-0 bg-[rgba(0,0,0,.6)] z-[10]"></div>
               <div className="overflow-hidden h-[100%] w-[100%]">
-              <img
-                src={item.image}
-                alt=""
+              <Image
+                width={500}
+                height={500}
+                src={item.image || "/"}
+                alt={item.image || "/"}
                 className={`h-[100%] object-cover w-[100%] ${start ? 'animate-scale-up' : 'animate-scale-down'} group-hover:animate-none`}
               />
+
               </div>
               <h1 className={`z-[11] ${swiping || begins ? 'opacity-0' : 'opacity-[1]'} absolute top-[50%] left-[50%] text-[1rem] scale-[1] -translate-x-[50%] -translate-y-[50%] text-[#fff] ${start ? 'animate-fade-in' : 'animate-out'} p-[15px] bg-[rgba(0,0,0,.3)] text-center w-[80vw] md:w-auto`}>
                 {item.text}
